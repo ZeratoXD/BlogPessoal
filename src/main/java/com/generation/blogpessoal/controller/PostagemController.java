@@ -14,16 +14,16 @@ import com.generation.blogpessoal.model.Postagem;
 import com.generation.blogpessoal.repository.PostagemRepository;
 
 @RestController
-@RequestMapping
+@RequestMapping("/postagens")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 	
 	@Autowired
-	private PostagemRepository PostagemRepository;
+	private PostagemRepository postagemRepository;
 	
 	@GetMapping
 	public ResponseEntity<List<Postagem>> getAll(){
-		return ResponseEntity.ok(PostagemRepository.findAll());
+		return ResponseEntity.ok(postagemRepository.findAll());
 	}
 
 }
